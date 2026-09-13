@@ -1,1 +1,4 @@
 # rsschool-cv
+
+https://gor-anastasii.github.io/rsschool-cv/
+https://gor-anastasii.github.io/rsschool-cv/cv

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Anastasia Gorodilina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav__scroll">
+        <ul class="nav__list">
+          <li><a href="#about-title">About</a></li>
+          <li><a href="#skills-title">Skills</a></li>
+          <li><a href="#code-title">Code</a></li>
+          <li><a href="#experience-title">Experience</a></li>
+          <li><a href="#projects-title">Projects</a></li>
+          <li><a href="#education-title">Education</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page">
+      <header class="hero">
+        <img src="./images/me.jpg" alt="Anastasia Gorodilina" class="hero__photo">
+        <h1 class="hero__name">Anastasia Gorodilina</h1>
+        <p class="hero__badge">Full-Stack Developer</p>
+        <p class="hero__tagline">
+          React &amp; Vue.js interfaces, wired up to APIs of my own making.
+        </p>
+        <ul class="hero__contacts">
+          <li>
+            <a class="chip" href="mailto:nastenas714@gmail.com">nastenas714@gmail.com</a>
+          </li>
+          <li>
+            <a class="chip" href="https://t.me/gor_anastasii" target="_blank" rel="noopener noreferrer">@gor_anastasii</a>
+          </li>
+        </ul>
+      </header>
+
+      <main class="content">
+        <section class="card" aria-labelledby="about-title">
+          <h2 id="about-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>About me
+          </h2>
+          <div class="about">
+            <p>
+              Frontend developer with backend knowledge and commercial
+              experience building web applications using React and Vue.js
+            </p>
+            <p>
+              I develop frontend functionality, integrate REST APIs, build
+              responsive and cross-browser interfaces, and redesign existing
+              applications. I've independently designed and built three company
+              landing pages from scratch, and completely reworked the UI of two
+              internal web apps.
+            </p>
+            <p>
+              My everyday toolkit is React, TypeScript, JavaScript, Redux,
+              Axios, Git, Docker, and Figma — with Node.js, Express, PostgreSQL,
+              and MongoDB covering the backend side.
+            </p>
+            <p>
+              Right now I'm focused on going deeper as a frontend developer:
+              sharper technical skills, more complex applications, and modern
+              frontend practices worth mastering.
+            </p>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>Skills
+          </h2>
+          <div class="skills">
+            <div class="skill-group">
+              <h3 class="skill-group__title">Frontend</h3>
+              <ul class="tag-list">
+                <li class="tag tag--pink">React</li>
+                <li class="tag tag--pink">Vue.js</li>
+                <li class="tag tag--pink">Redux</li>
+                <li class="tag tag--pink">JavaScript</li>
+                <li class="tag tag--pink">TypeScript</li>
+                <li class="tag tag--pink">HTML5</li>
+                <li class="tag tag--pink">CSS3</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group__title">API &amp; data</h3>
+              <ul class="tag-list">
+                <li class="tag tag--neutral">REST API</li>
+                <li class="tag tag--neutral">Axios</li>
+                <li class="tag tag--neutral">WebSocket</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group__title">Backend</h3>
+              <ul class="tag-list">
+                <li class="tag tag--green">Node.js</li>
+                <li class="tag tag--green">Express</li>
+                <li class="tag tag--green">PostgreSQL</li>
+                <li class="tag tag--green">MongoDB</li>
+                <li class="tag tag--green">Sequelize</li>
+                <li class="tag tag--green">JWT auth</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group__title">Tools</h3>
+              <ul class="tag-list">
+                <li class="tag tag--neutral">Git</li>
+                <li class="tag tag--neutral">Docker</li>
+                <li class="tag tag--neutral">Figma</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3 class="skill-group__title">UI/UX</h3>
+              <ul class="tag-list">
+                <li class="tag tag--pink">UI from scratch</li>
+                <li class="tag tag--pink">Product redesign</li>
+                <li class="tag tag--pink">Responsive interfaces</li>
+                <li class="tag tag--pink">Cross-browser dev</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="code-title">
+          <h2 id="code-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>Code example
+          </h2>
+          <div class="code-window">
+            <div class="code-window__bar">
+              <span class="code-window__file">UserList.tsx</span>
+            </div>
+            <pre
+              class="code-window__body"
+            ><code>import { useEffect, useState } from "react";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const UserList = () =&gt; {
+  const [users, setUsers] = useState&lt;User[]&gt;([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    fetch("/api/users")
+      .then((response) =&gt; response.json())
+      .then((data: User[]) =&gt; setUsers(data))
+      .finally(() =&gt; setLoading(false));
+  }, []);
+
+  if (loading) {
+    return &lt;p&gt;Loading...&lt;/p&gt;;
+  }
+
+  return (
+    &lt;ul&gt;
+      {users.map((user) =&gt; (
+        &lt;li key={user.id}&gt;
+          &lt;strong&gt;{user.name}&lt;/strong&gt;
+          &lt;span&gt; — {user.email}&lt;/span&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+};
+
+export default UserList;</code></pre>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="experience-title">
+          <h2 id="experience-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>Work experience
+          </h2>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <article class="entry">
+                <div class="entry__head">
+                  <h3 class="entry__role">
+                    Frontend Developer — ООО «MeraSoft»
+                  </h3>
+                  <p class="entry__period">
+                    <time datetime="2025-04">Apr 2025</time> – Present
+                  </p>
+                </div>
+                <p class="entry__summary">
+                  Web applications for a residential care facility and
+                  rehabilitation center, plus company landing pages.
+                </p>
+                <h4 class="entry__subtitle">
+                  Responsibilities and achievements
+                </h4>
+                <ul class="entry__list">
+                  <li>
+                    Developed new frontend functionality in React for a
+                    rehabilitation center application and integrated it with
+                    backend REST APIs.
+                  </li>
+                  <li>
+                    Developed new frontend functionality in Vue.js for a
+                    personnel and patient management application and integrated
+                    it with backend REST APIs.
+                  </li>
+                  <li>
+                    Completely redesigned the UI of two internal web
+                    applications for the care facility and rehabilitation
+                    center.
+                  </li>
+                  <li>
+                    Independently designed and built three company landing pages
+                    from scratch using HTML5, CSS3, and JavaScript.
+                  </li>
+                  <li>
+                    Created responsive and cross-browser interfaces for desktop
+                    and mobile devices.
+                  </li>
+                  <li>
+                    Worked with Docker for containerization and local execution
+                    of frontend and backend applications.
+                  </li>
+                  <li>
+                    Used Git for development and implementation of project
+                    changes.
+                  </li>
+                </ul>
+                <p class="entry__stack">
+                  Tech stack: React, Vue.js, TypeScript, JavaScript, HTML5,
+                  CSS3, REST API, Figma, Git, Docker
+                </p>
+
+                <h4 class="entry__subtitle">
+                  Additional responsibility
+                  <span class="entry__period-inline"
+                    >(~3 months, during the employee search period)</span
+                  >
+                </h4>
+                <ul class="entry__list">
+                  <li>
+                    Assigned and distributed development tasks according to
+                    project requirements.
+                  </li>
+                  <li>Monitored task deadlines and checked completed work.</li>
+                  <li>Tested the application after changes.</li>
+                  <li>Reviewed results delivered by other developers.</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card" aria-labelledby="projects-title">
+          <h2 id="projects-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>Projects
+          </h2>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <article class="entry">
+                <div class="entry__head">
+                  <h3 class="entry__role">
+                    Graduation project — AI-powered educational web platform
+                  </h3>
+                </div>
+                <p class="entry__summary">
+                  Web platform for creating and publishing educational content
+                  with AI-assisted content generation.
+                </p>
+                <h4 class="entry__subtitle">
+                  Responsibilities and achievements
+                </h4>
+                <ul class="entry__list">
+                  <li>
+                    Integrated Grok AI for AI-assisted content generation.
+                  </li>
+                  <li>Integrated Cloudinary for file storage.</li>
+                  <li>Built the frontend using React and Redux.</li>
+                  <li>Used Axios for API communication.</li>
+                  <li>
+                    Implemented WebSocket communication for real-time
+                    interaction.
+                  </li>
+                  <li>
+                    Developed backend functionality using Node.js and Express.
+                  </li>
+                  <li>Implemented JWT authentication.</li>
+                  <li>Used PostgreSQL for data storage with Sequelize.</li>
+                  <li>
+                    Used Docker for development and application execution.
+                  </li>
+                </ul>
+                <p class="entry__stack">
+                  Tech stack: React, Redux, Axios, WebSocket, Node.js, Express,
+                  JWT, Sequelize, PostgreSQL, Docker
+                </p>
+              </article>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card" aria-labelledby="education-title">
+          <h2 id="education-title" class="card__title">
+            <span class="marker" aria-hidden="true"></span>Education
+          </h2>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3 class="entry__role">
+                Bachelor of Science in Software Engineering
+              </h3>
+              <p class="entry__period">
+                <time datetime="2022-09">Sep 2022</time> –
+                <time datetime="2026-06">Jun 2026</time>
+              </p>
+            </div>
+            <p class="entry__summary">
+              Belarusian State Technological University — Information Technology
+              Software
+            </p>
+          </article>
+
+          <article class="entry entry--divider">
+            <div class="entry__head">
+              <h3 class="entry__role">
+                ITGen.io — Software Development Training
+              </h3>
+              <p class="entry__period">
+                <time datetime="2018-09">Sep 2018</time> –
+                <time datetime="2022-06">Jun 2022</time>
+              </p>
+            </div>
+            <p class="entry__summary">
+              Software development training with a focus on programming and web
+              development.
+            </p>
+          </article>
+
+          <h3 class="card__subtitle" id="languages-title">Languages</h3>
+          <ul class="languages">
+            <li>
+              <strong>English</strong> — A2+/B1
+              <p>
+                I can read and understand technical documentation, communicate
+                about development tasks, and work with English-language
+                programming resources.
+              </p>
+            </li>
+            <li><strong>Russian</strong> — Native</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a class="footer__github" href="https://github.com/gor-anastasii" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <p class="footer__year">&copy; 2026</p>
+        <a class="footer__rs" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/fullstack-engineering/tasks/cv/assets/rs-school-logo.svg" alt="RSSchool logo" width="52" height="26" >
+        </a>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = Array.from(document.querySelectorAll('.nav__list a'));
+        const sections = navLinks.map((link) =>
+          document.querySelector(link.getAttribute('href'))
+        );
+
+        let isClickScrolling = false;
+        let releaseTimeout;
+
+        function setActive(link) {
+          navLinks.forEach((navLink) => navLink.classList.remove('is-active'));
+          link.classList.add('is-active');
+          link.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest',
+          });
+        }
+
+        function releaseClickLock() {
+          isClickScrolling = false;
+        }
+
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            isClickScrolling = true;
+            clearTimeout(releaseTimeout);
+            releaseTimeout = setTimeout(releaseClickLock, 900);
+            setActive(link);
+          });
+        });
+
+        window.addEventListener('scrollend', () => {
+          clearTimeout(releaseTimeout);
+          releaseClickLock();
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (isClickScrolling) return;
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = sections.indexOf(entry.target);
+                if (index !== -1) {
+                  setActive(navLinks[index]);
+                }
+              }
+            });
+          },
+          { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+        );
+
+        sections.forEach((section) => {
+          if (section) observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
