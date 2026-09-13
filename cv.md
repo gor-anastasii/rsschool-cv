@@ -158,3 +158,30 @@ Web platform for creating and publishing educational content with AI-assisted co
 **Tech Stack:** React, Redux, Axios, WebSocket, Node.js, Express, JWT, Sequelize, PostgreSQL, Docker
 
 ---
+
+## Education
+
+### Bachelor of Science in Software Engineering
+
+**Belarusian State Technological University**  
+Major: Information Technology Software
+
+**Sep 2022 – Jun 2026**
+
+---
+
+### ITGen.io — Software Development Training
+
+**Sep 2018 – Jun 2022**
+
+Software development training with a focus on programming and web development.
+
+---
+
+## English
+
+**English — A2+/B1**
+
+I can read and understand technical documentation, communicate about development tasks, and work with English-language programming resources.
+
+**Russian — Native**
